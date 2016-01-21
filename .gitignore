@@ -1,4 +1,6 @@
 .vagrant
+/assets/_temp_
+/assets/user_upload
 /vendor
 /web/fileadmin
 /web/index.php

@@ -17,6 +17,7 @@ composer install
 ```
 
 Take a deep breath, it takes ages cloning the TYPO3 source.
+Get some coffee.
 
 ```
 vagrant box update
@@ -38,6 +39,13 @@ vagrant up
 ```
 Username: vagrant
 Password: vagrant
+```
+
+### TYPO3 ###
+
+```
+Username: admin
+Password: password
 ```
 
 ### Database ###
