@@ -68,6 +68,12 @@ class {
     ]:
     notify => Service['apache2'],
 }
+php::apache::config { 
+    'max_execution_time=240':
+}
+php::apache::config { 
+    'max_input_vars=1500':
+}
 
 
 ## APACHE
@@ -77,6 +83,11 @@ file { "/var/www":
 file { "/var/www/bootstrap":
     ensure => link,
     target => "/vagrant/",
+    force  => true;
+}
+file { "/var/www/bootstrap/web/fileadmin":
+    ensure => link,
+    target => "../assets/",
     force  => true;
 }
 class { 'apache':
@@ -124,6 +135,14 @@ file { "/var/www/log/index.php":
     ensure => link,
     target => "/var/www/log/vendor/potsky/pimp-my-log/index.php",
     force  => true;
+}->
+file { "/var/www/log/config.user.php":
+    ensure  => present,
+    content => template("bk2k/pimpmylog/pimpmylog.php.erb")
+}->
+file { "/var/www/log/.htaccess":
+    ensure  => present,
+    content => template("bk2k/pimpmylog/pimpmylog.htaccess.erb")
 }
 
 
@@ -144,4 +163,8 @@ exec { "composer_require_phpmyadmin":
     path => ["/usr/local/bin/", "/usr/bin/", "/bin/"],
     cwd => "/var/www/phpmyadmin",
     require => Exec['set_path_for_composer_bin']
+}->
+file { "/var/www/phpmyadmin/vendor/phpmyadmin/phpmyadmin/config.inc.php":
+    ensure  => present,
+    content => template("bk2k/phpmyadmin/phpmyadmin.config.erb")
 }

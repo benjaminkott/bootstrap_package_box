@@ -10,12 +10,10 @@
 
 ## Install ##
 
-@TODO add max_path description for windows
-@TODO add text for running commandline in adminstrator mode on windows
+You need to run the composer install on Windows hosts as administrator.
 
 ```
-composer --global config process-timeout 2000
-composer install --prefer-source
+composer install
 ```
 
 Take a deep breath, it takes ages cloning the TYPO3 source.
@@ -35,7 +33,7 @@ vagrant up
 
 ## Credentials ##
 
-### Vagrant ###
+### Vagrant SSH ###
 
 ```
 Username: vagrant
@@ -49,4 +47,14 @@ Host: localhost
 Database: bootstrap
 Username: bootstrap
 Password: bootstrap
+```
+
+## Database ##
+
+### Create new MySQL dump ###
+
+Log into the VM and execute following command.
+
+```
+mysqldump -u bootstrap -pbootstrap --add-drop-table -h localhost bootstrap > /vagrant/data/database.sql
 ```
