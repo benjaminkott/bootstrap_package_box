@@ -127,7 +127,7 @@ exec { "create_rights_for_log_folder":
     path => ["/bin"]
 }->
 exec { "change_user_for_apache_logfiles":
-    command => "chown -R ${run_user}.${run_group} apache2/",
+    command => "chown -R vagrant.vagrant apache2/",
     path => ["/bin"],
     cwd => "/var/log/"
 }->
