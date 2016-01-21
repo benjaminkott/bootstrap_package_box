@@ -1,0 +1,12 @@
+.vagrant
+/vendor
+/web/fileadmin
+/web/index.php
+/web/typo3
+/web/typo3conf/ENABLE_INSTALL_TOOL
+/web/typo3conf/deprecation_*
+/web/typo3conf/ext
+/web/typo3conf/l10n
+/web/typo3temp
+/web/uploads
+/nbproject

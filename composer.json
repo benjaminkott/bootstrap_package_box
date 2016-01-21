@@ -1,0 +1,37 @@
+{
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://composer.typo3.org/"
+        }
+    ],
+    "name": "bk2k/bootstrap-package-box",
+    "description": "",
+    "type": "project",
+    "license": "MIT",
+    "homepage": "https://github.com/benjaminkott/bootstrap_package",
+    "authors": [
+        {
+            "name": "Benjamin Kott",
+            "email": "info@bk2k.info",
+            "homepage": "http://www.bk2k.info",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "typo3/cms": "7.6.2",
+        "bk2k/bootstrap-package": "dev-master",
+        "typo3-ter/realurl": "1.13.5"
+    },
+    "config": {
+        "sort-packages": true,
+        "process-timeout": 2000,
+        "preferred-install": "source"
+    },
+    "extra": {
+        "typo3/cms": {
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "web-dir": "web"
+        }
+    }
+}
