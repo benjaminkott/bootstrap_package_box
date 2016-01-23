@@ -53,8 +53,8 @@ Password: password
 ```
 Host: localhost
 Database: bootstrap
-Username: bootstrap
-Password: bootstrap
+Username: bootstrap_p
+Password: bootstrap_u
 ```
 
 ## Database ##

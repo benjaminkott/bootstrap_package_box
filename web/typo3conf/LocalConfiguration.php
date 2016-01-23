@@ -9,10 +9,10 @@ return [
     'DB' => [
         'database' => 'bootstrap',
         'host' => '127.0.0.1',
-        'password' => 'bootstrap',
+        'password' => 'bootstrap_p',
         'port' => 3306,
         'socket' => '',
-        'username' => 'bootstrap',
+        'username' => 'bootstrap_u',
     ],
     'EXT' => [
         'extConf' => [
