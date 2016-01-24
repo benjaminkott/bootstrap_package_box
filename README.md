@@ -64,5 +64,5 @@ Password: bootstrap_u
 Log into the VM and execute following command.
 
 ```
-mysqldump -u bootstrap -pbootstrap --add-drop-table -h localhost bootstrap > /vagrant/data/database.sql
+mysqldump -u bootstrap_u -pbootstrap_p --add-drop-table -h localhost bootstrap > /vagrant/data/database.sql
 ```
