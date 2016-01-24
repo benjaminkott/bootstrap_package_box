@@ -1,5 +1,6 @@
 .vagrant
 /assets/_temp_
+/assets/_processed_
 /assets/user_upload
 /vendor
 /web/fileadmin

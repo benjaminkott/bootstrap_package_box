@@ -17,6 +17,11 @@ define bk2k::apache(
         target => "/vagrant/",
         force  => true;
     }
+    file { "/var/www/${hostname}/web/fileadmin":
+        ensure => link,
+        target => "../assets/",
+        force  => true;
+    }
     class { 'apache':
 
     }
