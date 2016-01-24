@@ -1,23 +1,31 @@
 # Bootstrap Package Vagrant Box #
 
-!WIP NOT WORKING YET!
-
 ## Preparation ##
 
-- Install Virtual Box
-- Install Vagrant
-- Install Composer
+- Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+- Install [Vagrant](http://www.vagrantup.com/downloads.html)
+- Install [Composer](https://getcomposer.org/download/)
 
 ## Install ##
 
+Puppet modules are included via git submodules that need to be initialized.
+
+```
+git submodule update --init --recursive
+```
+
 You need to run the composer install on Windows hosts as administrator.
+
+Take a deep breath now... to avoid problems on Windows hosts we prefer source 
+checkouts instead of distributions for composer - it takes ages to clone the TYPO3 source
+for the first time. This is now the perfect moment to get some coffe and check back after
+~10 Minutes after hitting composer install.
 
 ```
 composer install
 ```
 
-Take a deep breath, it takes ages cloning the TYPO3 source.
-Get some coffee.
+Ensure your vagrant box is up 2 date. Before starting the box for the first time.
 
 ```
 vagrant box update
@@ -27,9 +35,9 @@ vagrant up
 ## Edit hosts file ##
 
 ```
-192.168.50.11	bootstrap.dev.local
-192.168.50.11	log.dev.local
-192.168.50.11	phpmyadmin.dev.local
+192.168.50.11 bootstrap.dev.local
+192.168.50.11 log.dev.local
+192.168.50.11 phpmyadmin.dev.local
 ```
 
 ## Credentials ##
@@ -37,6 +45,7 @@ vagrant up
 ### Vagrant SSH ###
 
 ```
+IP: 192.168.50.11
 Username: vagrant
 Password: vagrant
 ```
