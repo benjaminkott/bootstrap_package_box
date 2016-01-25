@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/benjaminkott/bootstrap_package.git",
-                "reference": "fdcd6aa8c5cdc42902c20cef891dc70b7f00f4d8"
+                "reference": "a79ff3289ef47966a17ac9442179b33a117f24b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/benjaminkott/bootstrap_package/zipball/fdcd6aa8c5cdc42902c20cef891dc70b7f00f4d8",
-                "reference": "fdcd6aa8c5cdc42902c20cef891dc70b7f00f4d8",
+                "url": "https://api.github.com/repos/benjaminkott/bootstrap_package/zipball/a79ff3289ef47966a17ac9442179b33a117f24b1",
+                "reference": "a79ff3289ef47966a17ac9442179b33a117f24b1",
                 "shasum": ""
             },
             "replace": {
@@ -65,7 +65,7 @@
                 "issues": "https://github.com/benjaminkott/bootstrap_package/issues",
                 "source": "https://github.com/benjaminkott/bootstrap_package/tree/master"
             },
-            "time": "2016-01-19 20:08:08"
+            "time": "2016-01-25 12:05:02"
         },
         {
             "name": "cogpowered/finediff",
