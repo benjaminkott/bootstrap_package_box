@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4a7c9e18062f8677d9fe3fdd2dc61aff",
-    "content-hash": "6cfb2c0c3ce7efe432048c551dca3187",
+    "hash": "b485c028baf6e22fc9efa751d6fb65c4",
+    "content-hash": "c94e69b42e48b8e064304e85b9399d93",
     "packages": [
         {
             "name": "bk2k/bootstrap-package",
@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/benjaminkott/bootstrap_package.git",
-                "reference": "a79ff3289ef47966a17ac9442179b33a117f24b1"
+                "reference": "c5ac16e6cbaea67e73195c20095a2e106c933e14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/benjaminkott/bootstrap_package/zipball/a79ff3289ef47966a17ac9442179b33a117f24b1",
-                "reference": "a79ff3289ef47966a17ac9442179b33a117f24b1",
+                "url": "https://api.github.com/repos/benjaminkott/bootstrap_package/zipball/c5ac16e6cbaea67e73195c20095a2e106c933e14",
+                "reference": "c5ac16e6cbaea67e73195c20095a2e106c933e14",
                 "shasum": ""
             },
             "replace": {
@@ -65,7 +65,7 @@
                 "issues": "https://github.com/benjaminkott/bootstrap_package/issues",
                 "source": "https://github.com/benjaminkott/bootstrap_package/tree/master"
             },
-            "time": "2016-01-25 12:05:02"
+            "time": "2016-03-04 21:31:13"
         },
         {
             "name": "cogpowered/finediff",
@@ -171,6 +171,56 @@
                 "instantiate"
             ],
             "time": "2015-06-14 21:17:01"
+        },
+        {
+            "name": "mso/idna-convert",
+            "version": "v0.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phlylabs/idna-convert.git",
+                "reference": "0a0a09e460e63739d82c3f0c3f0e5555567a6be3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phlylabs/idna-convert/zipball/0a0a09e460e63739d82c3f0c3f0e5555567a6be3",
+                "reference": "0a0a09e460e63739d82c3f0c3f0e5555567a6be3",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pcre": "*",
+                "php": ">=5.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.9.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "idna_convert.class.php",
+                    "uctc.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1+"
+            ],
+            "authors": [
+                {
+                    "name": "Matthias Sommerfeld",
+                    "email": "mso@phlylabs.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A library for encoding and decoding internationalized domain names",
+            "homepage": "http://idnaconv.net/",
+            "keywords": [
+                "idn",
+                "idna",
+                "php"
+            ],
+            "time": "2016-01-06 21:05:46"
         },
         {
             "name": "pear/http_request2",
@@ -341,56 +391,6 @@
             "time": "2015-02-10 20:07:52"
         },
         {
-            "name": "phpwhois/idna-convert",
-            "version": "v0.8.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/phpWhois/idna-convert.git",
-                "reference": "ea337954b43ae47f5ebba97c19d309081bebc46e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/phpWhois/idna-convert/zipball/ea337954b43ae47f5ebba97c19d309081bebc46e",
-                "reference": "ea337954b43ae47f5ebba97c19d309081bebc46e",
-                "shasum": ""
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.8.x-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "idna_convert.class.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-2.1"
-            ],
-            "authors": [
-                {
-                    "name": "Matthias Sommerfeld",
-                    "email": "phlymail@phlylabs.de",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Dmitry Lukashin",
-                    "email": "dmitry@lukashin.ru",
-                    "role": "Maintainer"
-                }
-            ],
-            "description": "idna-convert library based on http://idnaconv.phlymail.de/",
-            "homepage": "http://idnaconv.phlymail.de/",
-            "keywords": [
-                "idn",
-                "idna",
-                "php"
-            ],
-            "time": "2014-12-26 04:51:08"
-        },
-        {
             "name": "psr/http-message",
             "version": "1.0",
             "source": {
@@ -532,16 +532,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v2.7.9",
+            "version": "v2.7.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "d3fc138b6ed8f8074591821d3416d8f9c04d6ca6"
+                "reference": "ee91ec301cd88ee38ab14505025fe94bbc19a9c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/d3fc138b6ed8f8074591821d3416d8f9c04d6ca6",
-                "reference": "d3fc138b6ed8f8074591821d3416d8f9c04d6ca6",
+                "url": "https://api.github.com/repos/symfony/console/zipball/ee91ec301cd88ee38ab14505025fe94bbc19a9c1",
+                "reference": "ee91ec301cd88ee38ab14505025fe94bbc19a9c1",
                 "shasum": ""
             },
             "require": {
@@ -587,20 +587,20 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-01-14 08:26:43"
+            "time": "2016-02-28 16:19:47"
         },
         {
             "name": "symfony/finder",
-            "version": "v2.7.9",
+            "version": "v2.7.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "d20ac81c81a67ab898b0c0afa435f3e9a7d460cf"
+                "reference": "addcb70b33affbca4f3979b0d000259b63dd6711"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/d20ac81c81a67ab898b0c0afa435f3e9a7d460cf",
-                "reference": "d20ac81c81a67ab898b0c0afa435f3e9a7d460cf",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/addcb70b33affbca4f3979b0d000259b63dd6711",
+                "reference": "addcb70b33affbca4f3979b0d000259b63dd6711",
                 "shasum": ""
             },
             "require": {
@@ -636,20 +636,20 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2016-01-14 08:26:43"
+            "time": "2016-02-22 16:12:29"
         },
         {
             "name": "typo3-ter/realurl",
-            "version": "1.13.5",
+            "version": "2.0.2",
             "dist": {
                 "type": "t3x",
-                "url": "http://typo3.org/extensions/repository/download/realurl/1.13.5/t3x/",
+                "url": "https://typo3.org/extensions/repository/download/realurl/2.0.2/t3x/",
                 "reference": null,
                 "shasum": null
             },
             "require": {
-                "php": ">= 5.3.2, <= 5.999.999",
-                "typo3/cms": ">= 4.5.40, <= 7.9.999"
+                "php": ">= 5.3.2, <= 7.0.999",
+                "typo3/cms-core": ">= 6.2.0, <= 7.99.999"
             },
             "conflict": {
                 "typo3-ter/cooluri": "*",
@@ -662,6 +662,12 @@
             "autoload": {
                 "classmap": [
                     ""
+                ],
+                "exclude-from-classmap": [
+                    "Tests",
+                    "tests",
+                    "Resources",
+                    "class.ext_update.php"
                 ]
             },
             "authors": [
@@ -672,8 +678,8 @@
                     "username": "dmitry"
                 }
             ],
-            "description": "Creates nice looking URLs for TYPO3 pages: converts http://example.com/index.phpid12345&L2 to http://example.com/path/to/your/page/. Please, ask for free support in TYPO3 mailing lists or contact the maintainer for paid support.",
-            "time": "2015-11-16 11:02:33"
+            "description": "Makes TYPO3 URLs search egnine friendly. Donations are welcome to dmitry.dulepov@gmail.com. They help to support the extension!",
+            "time": "2016-03-04 15:55:16"
         },
         {
             "name": "typo3/class-alias-loader",
@@ -735,16 +741,16 @@
         },
         {
             "name": "typo3/cms",
-            "version": "7.6.2",
+            "version": "7.6.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3/TYPO3.CMS.git",
-                "reference": "124f5470b931f06fd2e6ecc2cbe46221375c863a"
+                "reference": "bd0c7f6ca9cb3093bd647e85035e9f36bf1e9e86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3/TYPO3.CMS/zipball/124f5470b931f06fd2e6ecc2cbe46221375c863a",
-                "reference": "124f5470b931f06fd2e6ecc2cbe46221375c863a",
+                "url": "https://api.github.com/repos/TYPO3/TYPO3.CMS/zipball/bd0c7f6ca9cb3093bd647e85035e9f36bf1e9e86",
+                "reference": "bd0c7f6ca9cb3093bd647e85035e9f36bf1e9e86",
                 "shasum": ""
             },
             "require": {
@@ -754,9 +760,9 @@
                 "ext-pcre": "*",
                 "ext-session": "*",
                 "ext-xml": "*",
+                "mso/idna-convert": "^0.9.1",
                 "pear/http_request2": "~2.2.1",
                 "php": ">=5.5.0",
-                "phpwhois/idna-convert": "~0.8.2",
                 "psr/http-message": "~1.0",
                 "psr/log": "1.0.*@dev",
                 "swiftmailer/swiftmailer": "~5.4.1",
@@ -929,7 +935,7 @@
                 "extbase",
                 "typo3"
             ],
-            "time": "2015-12-21 10:53:03"
+            "time": "2016-02-23 11:00:40"
         },
         {
             "name": "typo3/cms-composer-installers",

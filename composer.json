@@ -19,9 +19,9 @@
         }
     ],
     "require": {
-        "typo3/cms": "7.6.2",
+        "typo3/cms": "7.6.4",
         "bk2k/bootstrap-package": "dev-master",
-        "typo3-ter/realurl": "1.13.5"
+        "typo3-ter/realurl": "2.0.2"
     },
     "config": {
         "sort-packages": true,

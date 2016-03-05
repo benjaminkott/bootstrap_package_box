@@ -355,7 +355,7 @@ return array (
     ),
     'realurl' => 
     array (
-      'composerName' => 'realurl',
+      'composerName' => 'dmitryd/typo3-realurl',
       'state' => 'active',
       'packagePath' => 'typo3conf/ext/realurl/',
       'suggestions' => 
