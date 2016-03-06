@@ -1,0 +1,28 @@
+---
+php::fpm::config::log_owner: 'vagrant'
+php::fpm::config::log_group: 'vagrant'
+php::fpm::config::error_log: '/var/log/php7.0-fpm.log'
+php::fpm::config::pid_file: '/var/run/php/php7.0-fpm.pid'
+
+php::fpm::service::service_name: 'php7.0-fpm'
+php::package_prefix: 'php7.0-'
+php::config_root_ini: '/etc/php/7.0/mods-available'
+php::params::cfg_root: '/etc/php/7.0'
+php::repo::ubuntu::ppa: 'ondrej/php'
+
+php::settings:
+  'PHP/max_execution_time': '240'
+  'PHP/max_input_vars': '1500'
+  'Date/date.timezone': 'Europe/Berlin'
+  
+php::extensions:
+  zip: {}
+  curl: {}
+  mbstring: {}
+  soap: {}
+  gd: {}
+  imagick:
+    provider: pecl
+
+apache::params::user: 'vagrant'
+apache::params::group: 'vagrant'

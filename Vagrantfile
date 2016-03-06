@@ -9,6 +9,7 @@ Vagrant.configure(2) do |config|
         app.vm.network "forwarded_port",  guest: 443, host: 8443
         
         app.vm.provision :puppet do |puppet|
+            puppet.hiera_config_path = "puppet/hiera.yaml"
             puppet.manifests_path = "puppet/manifests"
             puppet.manifest_file = "web.pp"
             puppet.module_path = "puppet/modules"

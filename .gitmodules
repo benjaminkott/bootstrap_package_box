@@ -1,6 +1,3 @@
-[submodule "puppet/modules/apache"]
-	path = puppet/modules/apache
-	url = https://github.com/example42/puppet-apache
 [submodule "puppet/modules/apt"]
 	path = puppet/modules/apt
 	url = https://github.com/puppetlabs/puppetlabs-apt
@@ -10,9 +7,6 @@
 [submodule "puppet/modules/inifile"]
 	path = puppet/modules/inifile
 	url = https://github.com/puppetlabs/puppetlabs-inifile
-[submodule "puppet/modules/php"]
-	path = puppet/modules/php
-	url = https://github.com/jippi/puppet-php/
 [submodule "puppet/modules/stdlib"]
 	path = puppet/modules/stdlib
 	url = https://github.com/puppetlabs/puppetlabs-stdlib
@@ -22,3 +16,9 @@
 [submodule "puppet/modules/mysql"]
 	path = puppet/modules/mysql
 	url = https://github.com/puppetlabs/puppetlabs-mysql
+[submodule "puppet/modules/php"]
+	path = puppet/modules/php
+	url = https://github.com/mayflower/puppet-php
+[submodule "puppet/modules/apache"]
+	path = puppet/modules/apache
+	url = https://github.com/puppetlabs/puppetlabs-apache
