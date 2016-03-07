@@ -30,10 +30,10 @@ return [
     'GFX' => [
         'jpg_quality' => '80',
         'processor' => 'ImageMagick',
-        'processor_allowTemporaryMasksAsPng' => '0',
+        'processor_allowTemporaryMasksAsPng' => false,
         'processor_colorspace' => 'sRGB',
-        'processor_effects' => '1',
-        'processor_enabled' => '1',
+        'processor_effects' => 1,
+        'processor_enabled' => true,
         'processor_path' => '/usr/bin/',
         'processor_path_lzw' => '/usr/bin/',
     ],

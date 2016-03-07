@@ -13,7 +13,7 @@ class bk2k {
     host { 'hostmachine':
         ip => '192.168.0.1';
     }->
-    package { ['htop', 'tree', 'unzip', 'vim', 'sendmail', 'git', 'php7.0-mysql']:
+    package { ['htop', 'tree', 'unzip', 'vim', 'sendmail', 'git', 'imagemagick', 'php7.0-mysql']:
         ensure => present;
     }
 
