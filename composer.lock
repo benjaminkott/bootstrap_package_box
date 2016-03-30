@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b4afe8d15f2f9a500905f2805e1fd9b2",
-    "content-hash": "82258142213ee2ef31647a4a6fd35908",
+    "hash": "981a4b7bf22b6bd0ea98278a1195896c",
+    "content-hash": "15e59de6ec0ecb9734c6099165b5499c",
     "packages": [
         {
             "name": "bk2k/bootstrap-package",
@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/benjaminkott/bootstrap_package.git",
-                "reference": "b44a7983a5dad0823192fcb4d624fc66b1be32a7"
+                "reference": "72693c4c242c7c1b2ace001b5200d9ba54ac7db2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/benjaminkott/bootstrap_package/zipball/b44a7983a5dad0823192fcb4d624fc66b1be32a7",
-                "reference": "b44a7983a5dad0823192fcb4d624fc66b1be32a7",
+                "url": "https://api.github.com/repos/benjaminkott/bootstrap_package/zipball/72693c4c242c7c1b2ace001b5200d9ba54ac7db2",
+                "reference": "72693c4c242c7c1b2ace001b5200d9ba54ac7db2",
                 "shasum": ""
             },
             "replace": {
@@ -31,7 +31,7 @@
             "type": "typo3-cms-extension",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "7.0.x-dev"
+                    "dev-master": "7.1.x-dev"
                 }
             },
             "autoload": {
@@ -65,7 +65,7 @@
                 "issues": "https://github.com/benjaminkott/bootstrap_package/issues",
                 "source": "https://github.com/benjaminkott/bootstrap_package/tree/master"
             },
-            "time": "2016-03-05 17:05:57"
+            "time": "2016-03-07 23:25:44"
         },
         {
             "name": "cogpowered/finediff",
@@ -641,7 +641,7 @@
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
@@ -762,12 +762,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3/TYPO3.CMS.git",
-                "reference": "8ec2d5f4abfadbfa9069f1914648a8b0376dc26f"
+                "reference": "c39ea264d7191c418e62c40609dbb7846e59541f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3/TYPO3.CMS/zipball/8ec2d5f4abfadbfa9069f1914648a8b0376dc26f",
-                "reference": "8ec2d5f4abfadbfa9069f1914648a8b0376dc26f",
+                "url": "https://api.github.com/repos/TYPO3/TYPO3.CMS/zipball/c39ea264d7191c418e62c40609dbb7846e59541f",
+                "reference": "c39ea264d7191c418e62c40609dbb7846e59541f",
                 "shasum": ""
             },
             "require": {
@@ -788,7 +788,7 @@
                 "symfony/finder": ">=2.7|<3.1",
                 "typo3/class-alias-loader": "^1.0",
                 "typo3/cms-composer-installers": "^1.2.5",
-                "typo3fluid/fluid": "^1.0.4"
+                "typo3fluid/fluid": "^1.0.6"
             },
             "replace": {
                 "typo3/cms-about": "self.version",
@@ -847,8 +847,8 @@
             },
             "require-dev": {
                 "codeception/codeception": "^2.1",
-                "mikey179/vfsstream": "1.6.0",
-                "phpunit/phpunit": "~4.8.0",
+                "mikey179/vfsstream": "~1.6.0",
+                "phpunit/phpunit": "~5.2.0",
                 "se/selenium-server-standalone": "~2.48.2"
             },
             "suggest": {
@@ -961,20 +961,20 @@
                 "extbase",
                 "typo3"
             ],
-            "time": "2016-03-06 11:01:58"
+            "time": "2016-03-30 08:48:51"
         },
         {
             "name": "typo3/cms-composer-installers",
-            "version": "1.2.5",
+            "version": "1.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3/CmsComposerInstallers.git",
-                "reference": "68dce62bbfed9912583de4a1db16df8feb8f7e2d"
+                "reference": "501fc9a55f357b5f3b2e81cfedba26f7bf4b7ebb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3/CmsComposerInstallers/zipball/68dce62bbfed9912583de4a1db16df8feb8f7e2d",
-                "reference": "68dce62bbfed9912583de4a1db16df8feb8f7e2d",
+                "url": "https://api.github.com/repos/TYPO3/CmsComposerInstallers/zipball/501fc9a55f357b5f3b2e81cfedba26f7bf4b7ebb",
+                "reference": "501fc9a55f357b5f3b2e81cfedba26f7bf4b7ebb",
                 "shasum": ""
             },
             "require": {
@@ -1025,20 +1025,20 @@
                 "installer",
                 "typo3"
             ],
-            "time": "2015-11-03 21:19:57"
+            "time": "2016-03-23 11:08:19"
         },
         {
             "name": "typo3fluid/fluid",
-            "version": "1.0.4",
+            "version": "1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TYPO3Fluid/Fluid.git",
-                "reference": "8c62d41b66ffcbb5317bc67f598899ce1f7832d0"
+                "reference": "e3bc20e60df6960a852a0829c7a0238f643808ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TYPO3Fluid/Fluid/zipball/8c62d41b66ffcbb5317bc67f598899ce1f7832d0",
-                "reference": "8c62d41b66ffcbb5317bc67f598899ce1f7832d0",
+                "url": "https://api.github.com/repos/TYPO3Fluid/Fluid/zipball/e3bc20e60df6960a852a0829c7a0238f643808ac",
+                "reference": "e3bc20e60df6960a852a0829c7a0238f643808ac",
                 "shasum": ""
             },
             "require": {
@@ -1063,7 +1063,7 @@
                 "LGPL-3.0+"
             ],
             "description": "The TYPO3 Fluid template rendering engine",
-            "time": "2016-02-16 20:22:28"
+            "time": "2016-03-15 17:01:42"
         }
     ],
     "packages-dev": [],
