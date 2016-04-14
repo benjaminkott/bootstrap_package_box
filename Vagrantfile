@@ -1,6 +1,6 @@
-unless Vagrant.has_plugin?("vagrant-hosts")
-  system "vagrant plugin install vagrant-hosts"
-  print "installed vagrant-hosts, please rerun the command you executed"
+unless Vagrant.has_plugin?("vagrant-hostsupdater")
+  system "vagrant plugin install vagrant-hostsupdater"
+  print "installed vagrant-hostsupdater, please rerun the command you executed"
   exit
 end
 
@@ -32,16 +32,7 @@ Vagrant.configure(2) do |config|
             app.vm.synced_folder ".", "/vagrant", type: "nfs"
         end
 
-
-
-        app.vm.provision :hosts do |provisioner|
-            # Add a single hostname
-            provisioner.add_host '192.168.50.11', [
-                'bootstrap.dev.local',
-                'log.dev.local',
-                'phpmyadmin.dev.local'
-            ]
-        end
+        app.hostsupdater.aliases = ["bootstrap.dev.local", "log.dev.local", "phpmyadmin.dev.local"]
 
         app.vm.provision :puppet do |puppet|
             puppet.hiera_config_path = "puppet/hiera.yaml"
