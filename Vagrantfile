@@ -25,7 +25,7 @@ Vagrant.configure(2) do |config|
         app.vm.network "private_network", ip: "192.168.50.11"
 
         unless ((/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) == nil)
-            app.vm.synced_folder ".", "/vagrant", type: "smb"
+            app.vm.synced_folder ".", "/vagrant", type: "virtualbox"
         else
             app.vm.synced_folder ".", "/vagrant", type: "nfs"
         end
