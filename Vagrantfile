@@ -23,8 +23,6 @@ Vagrant.configure(2) do |config|
     
         app.vm.host_name = "bootstrap.dev"
         app.vm.network "private_network", ip: "192.168.50.11"
-        app.vm.network "forwarded_port",  guest: 80,  host: 8080
-        app.vm.network "forwarded_port",  guest: 443, host: 8443
 
         unless ((/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) == nil)
             app.vm.synced_folder ".", "/vagrant", type: "smb"
@@ -53,7 +51,7 @@ Vagrant.configure(2) do |config|
     end
 
     config.trigger.after [:up, :resume, :provision] do
-        system("open", "http://bootstrap.dev.local:8080")
+        system("open", "http://bootstrap.dev.local")
     end
     
 end
