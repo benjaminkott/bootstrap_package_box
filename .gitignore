@@ -13,3 +13,5 @@
 /web/typo3temp
 /web/uploads
 /nbproject
+
+.idea
