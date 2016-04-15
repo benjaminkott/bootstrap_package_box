@@ -20,6 +20,7 @@
     ],
     "require": {
         "typo3/cms": "dev-master",
+        "7elix/styleguide": "dev-master",
         "bk2k/bootstrap-package": "dev-master"
     },
     "config": {

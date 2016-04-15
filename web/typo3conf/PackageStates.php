@@ -23,11 +23,6 @@ return [
             'state' => 'active',
             'packagePath' => 'typo3/sysext/fluid/',
         ],
-        'documentation' => [
-            'composerName' => 'typo3/cms-documentation',
-            'state' => 'active',
-            'packagePath' => 'typo3/sysext/documentation/',
-        ],
         'info' => [
             'composerName' => 'typo3/cms-info',
             'state' => 'active',
@@ -47,6 +42,11 @@ return [
             'composerName' => 'typo3/cms-lang',
             'state' => 'active',
             'packagePath' => 'typo3/sysext/lang/',
+        ],
+        'linkvalidator' => [
+            'composerName' => 'typo3/cms-linkvalidator',
+            'state' => 'active',
+            'packagePath' => 'typo3/sysext/linkvalidator/',
         ],
         'setup' => [
             'composerName' => 'typo3/cms-setup',
@@ -68,6 +68,16 @@ return [
             'state' => 'active',
             'packagePath' => 'typo3/sysext/saltedpasswords/',
         ],
+        'taskcenter' => [
+            'composerName' => 'typo3/cms-taskcenter',
+            'state' => 'active',
+            'packagePath' => 'typo3/sysext/taskcenter/',
+        ],
+        'sys_action' => [
+            'composerName' => 'typo3/cms-sys-action',
+            'state' => 'active',
+            'packagePath' => 'typo3/sysext/sys_action/',
+        ],
         'func' => [
             'composerName' => 'typo3/cms-func',
             'state' => 'active',
@@ -83,10 +93,25 @@ return [
             'state' => 'active',
             'packagePath' => 'typo3/sysext/wizard_sortpages/',
         ],
+        'version' => [
+            'composerName' => 'typo3/cms-version',
+            'state' => 'active',
+            'packagePath' => 'typo3/sysext/version/',
+        ],
+        'workspaces' => [
+            'composerName' => 'typo3/cms-workspaces',
+            'state' => 'active',
+            'packagePath' => 'typo3/sysext/workspaces/',
+        ],
         'about' => [
             'composerName' => 'typo3/cms-about',
             'state' => 'active',
             'packagePath' => 'typo3/sysext/about/',
+        ],
+        'adodb' => [
+            'composerName' => 'typo3/cms-adodb',
+            'state' => 'active',
+            'packagePath' => 'typo3/sysext/adodb/',
         ],
         'backend' => [
             'composerName' => 'typo3/cms-backend',
@@ -158,6 +183,11 @@ return [
             'state' => 'active',
             'packagePath' => 'typo3/sysext/reports/',
         ],
+        'scheduler' => [
+            'composerName' => 'typo3/cms-scheduler',
+            'state' => 'active',
+            'packagePath' => 'typo3/sysext/scheduler/',
+        ],
         'sv' => [
             'composerName' => 'typo3/cms-sv',
             'state' => 'active',
@@ -193,10 +223,13 @@ return [
             'state' => 'active',
             'packagePath' => 'typo3conf/ext/bootstrap_package/',
         ],
-        'adodb' => [
-            'composerName' => 'typo3/cms-adodb',
+        'styleguide' => [
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/styleguide/',
+        ],
+        'compatibility7' => [
             'state' => 'inactive',
-            'packagePath' => 'typo3/sysext/adodb/',
+            'packagePath' => 'typo3/sysext/compatibility7/',
         ],
         'css_styled_content' => [
             'composerName' => 'typo3/cms-css-styled-content',
@@ -207,6 +240,11 @@ return [
             'composerName' => 'typo3/cms-dbal',
             'state' => 'inactive',
             'packagePath' => 'typo3/sysext/dbal/',
+        ],
+        'documentation' => [
+            'composerName' => 'typo3/cms-documentation',
+            'state' => 'inactive',
+            'packagePath' => 'typo3/sysext/documentation/',
         ],
         'feedit' => [
             'composerName' => 'typo3/cms-feedit',
@@ -233,11 +271,6 @@ return [
             'state' => 'inactive',
             'packagePath' => 'typo3/sysext/indexed_search_mysql/',
         ],
-        'linkvalidator' => [
-            'composerName' => 'typo3/cms-linkvalidator',
-            'state' => 'inactive',
-            'packagePath' => 'typo3/sysext/linkvalidator/',
-        ],
         'opendocs' => [
             'composerName' => 'typo3/cms-opendocs',
             'state' => 'inactive',
@@ -247,31 +280,6 @@ return [
             'composerName' => 'typo3/cms-recycler',
             'state' => 'inactive',
             'packagePath' => 'typo3/sysext/recycler/',
-        ],
-        'scheduler' => [
-            'composerName' => 'typo3/cms-scheduler',
-            'state' => 'inactive',
-            'packagePath' => 'typo3/sysext/scheduler/',
-        ],
-        'sys_action' => [
-            'composerName' => 'typo3/cms-sys-action',
-            'state' => 'inactive',
-            'packagePath' => 'typo3/sysext/sys_action/',
-        ],
-        'taskcenter' => [
-            'composerName' => 'typo3/cms-taskcenter',
-            'state' => 'inactive',
-            'packagePath' => 'typo3/sysext/taskcenter/',
-        ],
-        'version' => [
-            'composerName' => 'typo3/cms-version',
-            'state' => 'inactive',
-            'packagePath' => 'typo3/sysext/version/',
-        ],
-        'workspaces' => [
-            'composerName' => 'typo3/cms-workspaces',
-            'state' => 'inactive',
-            'packagePath' => 'typo3/sysext/workspaces/',
         ],
     ],
     'version' => 4,
