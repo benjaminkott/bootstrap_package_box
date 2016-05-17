@@ -8,6 +8,13 @@
 
 ## Install ##
 
+Clone to your local environment, e.g.
+
+```
+cd C:\Users\USER\Vagrants\
+git clone https://github.com/benjaminkott/bootstrap_package_box.git
+```
+
 Puppet modules are included via git submodules that need to be initialized.
 
 ```
