@@ -19,7 +19,8 @@
         }
     ],
     "require": {
-        "typo3/cms": "dev-master",
+        "typo3/cms": "7.6.9",
+        "dmitryd/typo3-realurl": "2.0.14",
         "7elix/styleguide": "dev-master",
         "bk2k/bootstrap-package": "dev-master"
     },

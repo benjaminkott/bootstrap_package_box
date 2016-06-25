@@ -8,18 +8,11 @@ return [
         'versionNumberInFilename' => '0',
     ],
     'DB' => [
-        'Connections' => [
-            'Default' => [
-                'charset' => 'utf-8',
-                'dbname' => 'bootstrap',
-                'driver' => 'mysqli',
-                'host' => '127.0.0.1',
-                'password' => 'bootstrap_p',
-                'port' => 3306,
-                'unix_socket' => '',
-                'user' => 'bootstrap_u',
-            ],
-        ],
+        'database' => 'bootstrap',
+        'host' => '127.0.0.1',
+        'password' => 'bootstrap_p',
+        'port' => 3306,
+        'username' => 'bootstrap_u',
     ],
     'EXT' => [
         'extConf' => [
