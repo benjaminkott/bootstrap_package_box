@@ -218,6 +218,12 @@ return [
             'packagePath' => 'typo3/sysext/recordlist/',
             'suggestions' => [],
         ],
+        'recycler' => [
+            'composerName' => 'typo3/cms-recycler',
+            'state' => 'active',
+            'packagePath' => 'typo3/sysext/recycler/',
+            'suggestions' => [],
+        ],
         'reports' => [
             'composerName' => 'typo3/cms-reports',
             'state' => 'active',
@@ -278,12 +284,6 @@ return [
             'packagePath' => 'typo3conf/ext/realurl/',
             'suggestions' => [],
         ],
-        'styleguide' => [
-            'state' => 'active',
-            'packagePath' => 'typo3conf/ext/styleguide/',
-            'suggestions' => [],
-            'composerName' => '7elix/styleguide',
-        ],
         'aboutmodules' => [
             'composerName' => 'typo3/cms-aboutmodules',
             'state' => 'inactive',
@@ -326,12 +326,6 @@ return [
             'packagePath' => 'typo3/sysext/fluid_styled_content/',
             'suggestions' => [],
         ],
-        'gridelements' => [
-            'composerName' => 'GridElementsTeam/Gridelements',
-            'state' => 'inactive',
-            'packagePath' => 'typo3conf/ext/gridelements/',
-            'suggestions' => [],
-        ],
         'indexed_search' => [
             'composerName' => 'typo3/cms-indexed-search',
             'state' => 'inactive',
@@ -348,12 +342,6 @@ return [
             'composerName' => 'typo3/cms-opendocs',
             'state' => 'inactive',
             'packagePath' => 'typo3/sysext/opendocs/',
-            'suggestions' => [],
-        ],
-        'recycler' => [
-            'composerName' => 'typo3/cms-recycler',
-            'state' => 'inactive',
-            'packagePath' => 'typo3/sysext/recycler/',
             'suggestions' => [],
         ],
     ],
