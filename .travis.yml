@@ -4,8 +4,6 @@ language: php
 php:
   - 5.5
 
-sudo: false
-
 addons:
   apt:
     packages:
