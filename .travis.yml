@@ -5,5 +5,15 @@ language:
 rvm:
   - 2.2
 
+sudo: false
+
+addons:
+  apt:
+    packages:
+      - parallel
+
+script:
+  - "bundle install"
+
 after_success:
   - "bundle exec cap production deploy"
