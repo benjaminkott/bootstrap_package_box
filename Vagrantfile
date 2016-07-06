@@ -47,7 +47,7 @@ Vagrant.configure(2) do |config|
 
     config.trigger.before :up do
         run "git submodule update --init --recursive"
-        run "composer install --ignore-platform-reqs"
+        run "composer update --ignore-platform-reqs"
     end
 
     config.trigger.after [:up, :resume, :provision] do

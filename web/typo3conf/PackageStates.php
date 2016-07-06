@@ -326,6 +326,12 @@ return [
             'packagePath' => 'typo3/sysext/fluid_styled_content/',
             'suggestions' => [],
         ],
+        'gridelements' => [
+            'composerName' => 'GridElementsTeam/Gridelements',
+            'state' => 'inactive',
+            'packagePath' => 'typo3conf/ext/gridelements/',
+            'suggestions' => [],
+        ],
         'indexed_search' => [
             'composerName' => 'typo3/cms-indexed-search',
             'state' => 'inactive',
