@@ -1,3 +1,9 @@
 # .travis.yml
+language: 
+  - ruby
+
+rvm:
+  - 2.2
+
 after_success:
   - "bundle exec cap production deploy"
