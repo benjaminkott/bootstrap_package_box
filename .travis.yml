@@ -4,15 +4,11 @@ language: php
 php:
   - 5.5
 
-addons:
-  apt:
-    packages:
-      - parallel
-
 before_install:
   - sudo apt-get update
-  - sudo apt-get install ruby
-  - gem install bundler
+  - sudo apt-get install ruby2.0
+  - ruby --version
+  - gem install bundler 
 
 script:
   - "bundle install"
