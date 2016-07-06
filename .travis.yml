@@ -1,10 +1,8 @@
 # .travis.yml
-language: 
-  - php
-  - ruby
+language: php
 
-rvm:
-  - 2.2
+php:
+  - 5.5
 
 sudo: false
 
