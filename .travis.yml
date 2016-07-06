@@ -1,6 +1,7 @@
 # .travis.yml
 language: 
   - php
+  - ruby
 
 rvm:
   - 2.2
