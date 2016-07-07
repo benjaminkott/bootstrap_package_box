@@ -8,10 +8,10 @@ server fetch(:server),
     user: fetch(:user),
     roles: %w{web},
     ssh_options: {
-        user, fetch(:user),
+        user: fetch(:user),
         forward_agent: false,
         auth_methods: %w(password),
-        password, fetch(:password)
+        password: fetch(:password)
     }
 
 set :deploy_to, ENV['DEPLOY_TO']
