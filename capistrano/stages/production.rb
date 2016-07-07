@@ -1,13 +1,17 @@
 set :stage, :production
 
-server ENV['SERVER'],
-    user, ENV['USER'],
-    roles: %w{app},
+set :server, ENV['SERVER']
+set :user, ENV['USER']
+set :password, ENV['PASSWORD']
+
+server fetch(:server),
+    user: fetch(:user),
+    roles: %w{web},
     ssh_options: {
-        user: ENV['USER'],
+        user, fetch(:user),
         forward_agent: false,
         auth_methods: %w(password),
-        password: ENV['PASSWORD'],
+        password, fetch(:password)
     }
 
 set :deploy_to, ENV['DEPLOY_TO']
