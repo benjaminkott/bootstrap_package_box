@@ -5,13 +5,12 @@ php:
   - 5.5
 
 before_install:
-  - sudo apt-get update
-  - sudo apt-get install ruby2.0
-  - ruby --version
-  - gem install bundler 
+  - gem install capistrano
+  - gem install capistrano-composer
 
 script:
-  - "bundle install"
+  - >
+    echo;
 
 after_success:
-  - "bundle exec cap production deploy"
+  - "cap production deploy"
