@@ -7,6 +7,7 @@ set :password, ENV['PASSWORD']
 server fetch(:server),
     user: fetch(:user),
     roles: %w{web},
+    password: fetch(:password),
     ssh_options: {
         user: fetch(:user),
         forward_agent: false,

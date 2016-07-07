@@ -4,5 +4,7 @@ set :scm, :git
 set :keep_releases, 2
 set :deploy_via, :remote_cache
 set :php_cli, 'php'
-set :log_level, :info
+set :log_level, :error
 set :use_sudo, false
+
+set :server_name, 
