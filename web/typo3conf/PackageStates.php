@@ -278,6 +278,12 @@ return [
             'packagePath' => 'typo3conf/ext/bootstrap_package/',
             'suggestions' => [],
         ],
+        'news' => [
+            'composerName' => 'georgringer/news',
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/news/',
+            'suggestions' => [],
+        ],
         'realurl' => [
             'composerName' => 'dmitryd/typo3-realurl',
             'state' => 'active',
