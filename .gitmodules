@@ -18,8 +18,7 @@
 	url = https://github.com/puppetlabs/puppetlabs-mysql
 [submodule "puppet/modules/php"]
 	path = puppet/modules/php
-	
-	url = https://github.com/mayflower/puppet-php.git
-[submodule "puppet/modules/apache"]
-	path = puppet/modules/apache
-	url = https://github.com/puppetlabs/puppetlabs-apache
+	url = https://github.com/mayflower/puppet-php
+[submodule "puppet/modules/staging"]
+	path = puppet/modules/staging
+	url = https://github.com/voxpupuli/puppet-staging
