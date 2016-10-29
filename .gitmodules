@@ -4,9 +4,6 @@
 [submodule "puppet/modules/puppi"]
 	path = puppet/modules/puppi
 	url = https://github.com/example42/puppi
-[submodule "puppet/modules/php"]
-	path = puppet/modules/php
-	url = https://github.com/mayflower/puppet-php
 [submodule "puppet/modules/staging"]
 	path = puppet/modules/staging
 	url = https://github.com/voxpupuli/puppet-staging
