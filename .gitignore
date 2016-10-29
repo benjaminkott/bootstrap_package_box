@@ -3,6 +3,11 @@
 /assets/_processed_
 /assets/user_upload
 /vendor
+
+
+puppet/modules/*
+!puppet/modules/bk2k
+
 /web/fileadmin
 /web/index.php
 /web/typo3
