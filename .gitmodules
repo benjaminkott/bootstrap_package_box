@@ -1,3 +1,0 @@
-[submodule "puppet/modules/staging"]
-	path = puppet/modules/staging
-	url = https://github.com/voxpupuli/puppet-staging
