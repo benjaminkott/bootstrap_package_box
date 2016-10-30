@@ -8,11 +8,17 @@ return [
         'versionNumberInFilename' => '0',
     ],
     'DB' => [
-        'database' => 'bootstrap',
-        'host' => '127.0.0.1',
-        'password' => 'bootstrap_p',
-        'port' => 3306,
-        'username' => 'bootstrap_u',
+        'Connections' => [
+            'Default' => [
+                'charset' => 'utf8',
+                'dbname' => 'bootstrap',
+                'driver' => 'mysqli',
+                'host' => '127.0.0.1',
+                'password' => 'bootstrap_p',
+                'port' => 3306,
+                'user' => 'bootstrap_u',
+            ],
+        ],
     ],
     'EXT' => [
         'extConf' => [
@@ -48,13 +54,13 @@ return [
     ],
     'GFX' => [
         'jpg_quality' => '80',
-        'processor' => 'GraphicsMagick',
+        'processor' => 'ImageMagick',
         'processor_allowTemporaryMasksAsPng' => false,
-        'processor_colorspace' => 'RGB',
-        'processor_effects' => -1,
+        'processor_colorspace' => 'sRGB',
+        'processor_effects' => 1,
         'processor_enabled' => true,
-        'processor_path' => 'C:/Program Files (x86)/GraphicsMagick-1.3.23-Q16/',
-        'processor_path_lzw' => 'C:/Program Files (x86)/GraphicsMagick-1.3.23-Q16/',
+        'processor_path' => '/usr/bin/',
+        'processor_path_lzw' => '/usr/bin/',
     ],
     'INSTALL' => [
         'wizardDone' => [],

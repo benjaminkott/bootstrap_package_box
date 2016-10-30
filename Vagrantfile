@@ -1,57 +1,71 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Install Hostupdater Plugin
 unless Vagrant.has_plugin?("vagrant-hostsupdater")
   system "vagrant plugin install vagrant-hostsupdater"
-  print "installed vagrant-hostsupdater, please rerun the command you executed"
+  print "Installed vagrant-hostsupdater, please rerun the command you executed"
   exit
 end
 
-unless Vagrant.has_plugin?("vagrant-vbguest")
-  system "vagrant plugin install vagrant-vbguest"
-  print "installed vagrant-vbguest, please rerun the command you executed"
-  exit
-end
-
+# Install Triggers Plugin
 unless Vagrant.has_plugin?("vagrant-triggers")
   system "vagrant plugin install vagrant-triggers"
-  print "installed vagrant-triggers, please rerun the command you executed"
+  print "Installed vagrant-triggers, please rerun the command you executed"
   exit
 end
 
-Vagrant.configure(2) do |config|
+# Vagrant Configuration
+Vagrant.configure("2") do |config|
 
-    config.vm.box = "ubuntu/trusty32"
-    config.vm.define "app" do |app|
-    
-        app.vm.host_name = "bootstrap.dev"
-        app.vm.network "private_network", ip: "192.168.50.11"
+  # Use ubuntu as development environment
+  config.vm.box = "bento/ubuntu-16.04"
 
-        unless ((/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) == nil)
-            app.vm.synced_folder ".", "/vagrant", type: "virtualbox"
-        else
-            app.vm.synced_folder ".", "/vagrant", type: "nfs"
-        end
+  # Configure VM
+  config.vm.define "app" do |app|
 
-        app.hostsupdater.aliases = ["bootstrap.dev.local", "log.dev.local", "phpmyadmin.dev.local"]
+    # Set hostname
+    app.vm.host_name = "bootstrap.dev"
 
-        app.vm.provision :puppet do |puppet|
-            puppet.hiera_config_path = "puppet/hiera.yaml"
-            puppet.manifests_path = "puppet/manifests"
-            puppet.manifest_file = "web.pp"
-            puppet.module_path = "puppet/modules"
-        end
+    # Create a private network
+    app.vm.network "private_network", ip: "192.168.50.11"
 
-        app.vm.provider "virtualbox" do |v|
-            v.memory = 1024
-            v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/vagrant", "1"]
-        end
+    # Add aliases
+    app.hostsupdater.aliases = [
+      "bootstrap.dev",
+      "log.dev",
+      "phpmyadmin.dev"
+    ]
+
+    # Set Synced Folders
+    unless ((/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) == nil)
+      app.vm.synced_folder ".", "/vagrant", type: "virtualbox"
+    else
+      app.vm.synced_folder ".", "/vagrant", type: "nfs"
     end
 
-    config.trigger.before :up do
-        run "git submodule update --init --recursive"
-        run "composer update --ignore-platform-reqs"
+    # Configure VirtualBox
+    app.vm.provider "virtualbox" do |vb|
+      vb.memory = 1024
+      vb.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/vagrant", "1"]
     end
 
-    config.trigger.after [:up, :resume, :provision] do
-        system("open", "http://bootstrap.dev.local")
+    # Install Puppet
+    app.vm.provision "shell", inline: "apt-get install -y puppet;
+      mkdir -p /etc/puppet/modules;
+      puppet module install puppetlabs-apt --modulepath '/vagrant/puppet/modules';
+      puppet module install puppetlabs-concat --modulepath '/vagrant/puppet/modules';
+      puppet module install puppetlabs-mysql --modulepath '/vagrant/puppet/modules';
+      puppet module install puppetlabs-apache --modulepath '/vagrant/puppet/modules';
+      puppet module install mayflower-php --version 4.0.0-beta1 --modulepath '/vagrant/puppet/modules'"
+
+    # Puppet provisioning
+    app.vm.provision "puppet" do |puppet|
+      puppet.manifests_path = "puppet/manifests"
+      puppet.manifest_file = "web.pp"
+      puppet.module_path = "puppet/modules"
     end
-    
+
+  end
+
 end

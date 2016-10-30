@@ -15,12 +15,6 @@ cd C:\Users\USER\Vagrants\
 git clone https://github.com/benjaminkott/bootstrap_package_box.git
 ```
 
-Puppet modules are included via git submodules that need to be initialized.
-
-```
-git submodule update --init --recursive
-```
-
 You need to run the composer install on Windows hosts as administrator.
 
 Take a deep breath now... to avoid problems on Windows hosts we prefer source 
@@ -42,9 +36,9 @@ vagrant up
 ## Edit hosts file ##
 
 ```
-192.168.50.11 bootstrap.dev.local
-192.168.50.11 log.dev.local
-192.168.50.11 phpmyadmin.dev.local
+192.168.50.11 bootstrap.dev
+192.168.50.11 log.dev
+192.168.50.11 phpmyadmin.dev
 ```
 
 ## Credentials ##

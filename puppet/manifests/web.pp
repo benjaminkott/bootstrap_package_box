@@ -4,22 +4,22 @@ class { 'bk2k': stage => 'pre'  }
 include bk2k
 
 ## Install MySQL Client, Dumps the database and install MySQL Server
+bk2k::mysql::server { "mysql_server":
+  database => "bootstrap",
+}->
 bk2k::mysql::client { "mysql":
 
 }->
 
-bk2k::mysql::server { "mysql_server":
-  database => "bootstrap",
-}->
 
 ## Install PHP
-bk2k::php { "php7":
+bk2k::php { "php":
 
 }->
 
 ## Install Apache
 bk2k::apache { "bootstrap":
-  hostname                 => "bootstrap",
-  port                     => 80,
-  create_log               => true
+  hostname => "bootstrap",
+  port => 80,
+  create_log => true
 }
