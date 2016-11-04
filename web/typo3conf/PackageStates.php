@@ -137,9 +137,6 @@ return [
         'bootstrap_package' => [
             'packagePath' => 'typo3conf/ext/bootstrap_package/',
         ],
-        'realurl' => [
-            'packagePath' => 'typo3conf/ext/realurl/',
-        ],
     ],
     'version' => 5,
 ];
