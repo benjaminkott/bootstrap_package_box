@@ -83,6 +83,9 @@ return [
         'cshmanual' => [
             'packagePath' => 'typo3/sysext/cshmanual/',
         ],
+        'documentation' => [
+            'packagePath' => 'typo3/sysext/documentation/',
+        ],
         'felogin' => [
             'packagePath' => 'typo3/sysext/felogin/',
         ],
@@ -103,6 +106,9 @@ return [
         ],
         'lowlevel' => [
             'packagePath' => 'typo3/sysext/lowlevel/',
+        ],
+        'opendocs' => [
+            'packagePath' => 'typo3/sysext/opendocs/',
         ],
         'recordlist' => [
             'packagePath' => 'typo3/sysext/recordlist/',

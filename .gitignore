@@ -2,22 +2,31 @@
 /assets/_temp_
 /assets/_processed_
 /assets/user_upload
-/vendor
-
 
 puppet/modules/*
 !puppet/modules/bk2k
 
-/web/fileadmin
-/web/index.php
-/web/typo3
-/web/typo3conf/ENABLE_INSTALL_TOOL
-/web/typo3conf/deprecation_*
-/web/typo3conf/ext
-/web/typo3conf/l10n
-/web/typo3temp
-/web/uploads
-/nbproject
+/www/cms7/vendor
+/www/cms7/web/fileadmin
+/www/cms7/web/index.php
+/www/cms7/web/typo3
+/www/cms7/web/typo3conf/ENABLE_INSTALL_TOOL
+/www/cms7/web/typo3conf/deprecation_*
+/www/cms7/web/typo3conf/ext
+/www/cms7/web/typo3conf/l10n
+/www/cms7/web/typo3temp
+/www/cms7/web/uploads
+
+/www/cms8/vendor
+/www/cms8/web/fileadmin
+/www/cms8/web/index.php
+/www/cms8/web/typo3
+/www/cms8/web/typo3conf/ENABLE_INSTALL_TOOL
+/www/cms8/web/typo3conf/deprecation_*
+/www/cms8/web/typo3conf/ext
+/www/cms8/web/typo3conf/l10n
+/www/cms8/web/typo3temp
+/www/cms8/web/uploads
 
 .idea
 composer.lock

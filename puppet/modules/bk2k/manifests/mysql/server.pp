@@ -1,22 +1,7 @@
-define bk2k::mysql::server(
-    $database      = undef,
-    $user          = undef,
-    $password      = undef,
-    $root_password = "root"
-) {
+define bk2k::mysql::server() {
 
-    if $user {
-        $database_user = $user
-    } else {
-        $database_user = "${database}_u"
-    }
-    if $password {
-        $database_password = $password
-    } else {
-        $database_password = "${database}_p"
-    }
     class { 'mysql::server':
-        root_password => $root_password,
+        root_password => "root",
         remove_default_accounts => true,
         override_options => {
             'mysqld' => {
@@ -25,13 +10,23 @@ define bk2k::mysql::server(
         },
         restart => true
     }->
-    mysql::db { "database":
+    mysql::db { "database for cms7.bootstrap.dev":
         ensure => "present",
-        user => $database_user,
-        password => $database_password,
-        dbname => $database,
+        user => "bootstrap",
+        password => "bootstrap",
+        dbname => "cms7_bootstrap",
         host => '%',
-        sql => '/vagrant/data/database.sql',
+        sql => '/vagrant/data/cms7_bootstrap.sql',
+        enforce_sql => true,
+        import_timeout => 900
+    }->
+    mysql::db { "database for cms8.bootstrap.dev":
+        ensure => "present",
+        user => "bootstrap",
+        password => "bootstrap",
+        dbname => "cms8_bootstrap",
+        host => '%',
+        sql => '/vagrant/data/cms8_bootstrap.sql',
         enforce_sql => true,
         import_timeout => 900
     }

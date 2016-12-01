@@ -1,20 +1,29 @@
-define bk2k::apache(
-    $hostname                 = undef,
-    $port                     = 80,
-    $create_log               = false
-) {
+define bk2k::apache() {
 
+    # 
+    # Prepare Filesystem
+    #
     file { "/var/www":
         ensure => "directory"
     }->
-    file { "/var/www/${hostname}":
+    file { "/var/www/cms7.bootstrap.dev":
         ensure => link,
-        target => "/vagrant/",
+        target => "/vagrant/www/cms7",
         force  => true;
     }->
-    file { "/var/www/${hostname}/web/fileadmin":
+    file { "/var/www/cms7.bootstrap.dev/web/fileadmin":
         ensure => link,
-        target => "../assets/",
+        target => "/vagrant/assets",
+        force  => true;
+    }->
+    file { "/var/www/cms8.bootstrap.dev":
+        ensure => link,
+        target => "/vagrant/www/cms8",
+        force  => true;
+    }->
+    file { "/var/www/cms8.bootstrap.dev/web/fileadmin":
+        ensure => link,
+        target => "/vagrant/assets",
         force  => true;
     }
 
@@ -69,18 +78,33 @@ define bk2k::apache(
     }
 
 
-
-    # Install host for application
     #
-    apache::vhost { "${hostname}.dev.${port}":
-        docroot             => "/var/www/${hostname}/web",
-        servername          => "${hostname}.dev",
+    # Install hosts for application
+    #
+    apache::vhost { "cms7.bootstrap.dev.80":
+        docroot             => "/var/www/cms7.bootstrap.dev/web",
+        servername          => "cms7.bootstrap.dev",
         priority            => false,
-        port                => $port,
+        port                => 80,
         docroot_owner       => "vagrant",
         docroot_group       => "vagrant",
         override            => 'All',
-        custom_fragment     => "ProxyPassMatch ^/(.*\\.php(/.*)?)$ fcgi://127.0.0.1:9000/var/www/${hostname}/web/$1",
+        setenv              => ["TYPO3_CONTEXT Development"],
+        custom_fragment     => "ProxyPassMatch ^/(.*\\.php(/.*)?)$ fcgi://127.0.0.1:9000/var/www/cms7.bootstrap.dev/web/$1",
+    }->
+    apache::vhost { "cms8.bootstrap.dev.80":
+        docroot             => "/var/www/cms8.bootstrap.dev/web",
+        servername          => "cms8.bootstrap.dev",
+        priority            => false,
+        port                => 80,
+        docroot_owner       => "vagrant",
+        docroot_group       => "vagrant",
+        override            => 'All',
+        serveraliases       => [
+            'bootstrap.dev'
+        ],
+        setenv              => ["TYPO3_CONTEXT Development"],
+        custom_fragment     => "ProxyPassMatch ^/(.*\\.php(/.*)?)$ fcgi://127.0.0.1:9000/var/www/cms8.bootstrap.dev/web/$1",
     }
 
 
@@ -110,7 +134,7 @@ define bk2k::apache(
         docroot             => "/var/www/log/data",
         servername          => "log.dev",
         priority            => false,
-        port                => $port,
+        port                => 80,
         docroot_owner       => "vagrant",
         docroot_group       => "vagrant",
         override            => 'All',

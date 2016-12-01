@@ -32,6 +32,8 @@ Vagrant.configure("2") do |config|
 
     # Add aliases
     app.hostsupdater.aliases = [
+      "cms7.bootstrap.dev",
+      "cms8.bootstrap.dev",
       "bootstrap.dev",
       "log.dev",
       "phpmyadmin.dev"

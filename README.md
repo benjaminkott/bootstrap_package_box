@@ -11,8 +11,8 @@
 Clone to your local environment, e.g.
 
 ```
-cd C:\Users\USER\Vagrants\
-git clone https://github.com/benjaminkott/bootstrap_package_box.git
+cd <projectfolder>
+git clone https://github.com/benjaminkott/bootstrap_package_box.git .
 ```
 
 You need to run the composer install on Windows hosts as administrator.
@@ -23,6 +23,9 @@ for the first time. This is now the perfect moment to get some coffe and check b
 ~10 Minutes after hitting composer install.
 
 ```
+cd <projectfolder>/www/cms7.bootstrap.dev 
+composer install
+cd <projectfolder>/www/cms7.bootstrap.dev 
 composer install
 ```
 
@@ -36,6 +39,8 @@ vagrant up
 ## Edit hosts file ##
 
 ```
+192.168.50.11 cms7.bootstrap.dev
+192.168.50.11 cms8.bootstrap.dev
 192.168.50.11 bootstrap.dev
 192.168.50.11 log.dev
 192.168.50.11 phpmyadmin.dev
@@ -58,13 +63,22 @@ Username: admin
 Password: password
 ```
 
-### Database ###
+### Database CMS7 ###
 
 ```
 Host: localhost
-Database: bootstrap
-Username: bootstrap_p
-Password: bootstrap_u
+Database: cms7_bootstrap
+Username: bootstrap
+Password: bootstrap
+```
+
+### Database CMS8 ###
+
+```
+Host: localhost
+Database: cms8_bootstrap
+Username: bootstrap
+Password: bootstrap
 ```
 
 ## Database ##
@@ -74,5 +88,6 @@ Password: bootstrap_u
 Log into the VM and execute following command.
 
 ```
-mysqldump -u bootstrap_u -pbootstrap_p --add-drop-table -h localhost bootstrap > /vagrant/data/database.sql
+mysqldump -u bootstrap -pbootstrap --add-drop-table -h localhost cms7_bootstrap > /vagrant/data/cms7_bootstrap.sql
+mysqldump -u bootstrap -pbootstrap --add-drop-table -h localhost cms8_bootstrap > /vagrant/data/cms8_bootstrap.sql
 ```
