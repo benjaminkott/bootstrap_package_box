@@ -20,7 +20,7 @@
     ],
     "require": {        
         "typo3/cms": "^7.6",
-        "bk2k/bootstrap-package": "dev-master"
+        "bk2k/bootstrap-package": "^7.1"
     },
     "config": {
         "secure-http": false,
