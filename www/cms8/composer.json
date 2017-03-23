@@ -18,12 +18,12 @@
             "role": "Developer"
         }
     ],
-    "require": {        
-        "typo3/cms": "dev-master",
-        "bk2k/bootstrap-package": "dev-master"
+    "require": {
+        "bk2k/bootstrap-package": "dev-master",
+        "dmitryd/typo3-realurl": "^2.1",
+        "typo3/cms": "dev-master as 8.6.1"
     },
     "config": {
-        "secure-http": false,
         "sort-packages": true,
         "process-timeout": 2000,
         "preferred-install": {

@@ -35,8 +35,8 @@ return [
         'setup' => [
             'packagePath' => 'typo3/sysext/setup/',
         ],
-        'rtehtmlarea' => [
-            'packagePath' => 'typo3/sysext/rtehtmlarea/',
+        'rte_ckeditor' => [
+            'packagePath' => 'typo3/sysext/rte_ckeditor/',
         ],
         'rsaauth' => [
             'packagePath' => 'typo3/sysext/rsaauth/',
@@ -101,6 +101,9 @@ return [
         'impexp' => [
             'packagePath' => 'typo3/sysext/impexp/',
         ],
+        'indexed_search' => [
+            'packagePath' => 'typo3/sysext/indexed_search/',
+        ],
         'install' => [
             'packagePath' => 'typo3/sysext/install/',
         ],
@@ -131,9 +134,6 @@ return [
         't3editor' => [
             'packagePath' => 'typo3/sysext/t3editor/',
         ],
-        't3skin' => [
-            'packagePath' => 'typo3/sysext/t3skin/',
-        ],
         'tstemplate' => [
             'packagePath' => 'typo3/sysext/tstemplate/',
         ],
@@ -142,6 +142,9 @@ return [
         ],
         'bootstrap_package' => [
             'packagePath' => 'typo3conf/ext/bootstrap_package/',
+        ],
+        'realurl' => [
+            'packagePath' => 'typo3conf/ext/realurl/',
         ],
     ],
     'version' => 5,

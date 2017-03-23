@@ -8,6 +8,15 @@ unless Vagrant.has_plugin?("vagrant-hostsupdater")
   exit
 end
 
+# Install Windows NFS Plugin
+unless ((/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) == nil)
+  unless Vagrant.has_plugin?("vagrant-winnfsd")
+    system "vagrant plugin install vagrant-winnfsd"
+    print "Installed vagrant-winnfsd, please rerun the command you executed"
+    exit
+  end
+end
+
 # Install Triggers Plugin
 unless Vagrant.has_plugin?("vagrant-triggers")
   system "vagrant plugin install vagrant-triggers"
@@ -40,16 +49,13 @@ Vagrant.configure("2") do |config|
     ]
 
     # Set Synced Folders
-    unless ((/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) == nil)
-      app.vm.synced_folder ".", "/vagrant", type: "virtualbox"
-    else
-      app.vm.synced_folder ".", "/vagrant", type: "nfs"
-    end
+    app.vm.synced_folder ".", "/vagrant", type: "nfs"
 
     # Configure VirtualBox
     app.vm.provider "virtualbox" do |vb|
       vb.memory = 1024
       vb.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/vagrant", "1"]
+      vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     end
 
     # Install Puppet

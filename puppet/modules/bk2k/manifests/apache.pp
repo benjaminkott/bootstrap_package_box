@@ -1,5 +1,6 @@
 define bk2k::apache() {
 
+
     # 
     # Prepare Filesystem
     #
@@ -86,8 +87,6 @@ define bk2k::apache() {
         servername          => "cms7.bootstrap.dev",
         priority            => false,
         port                => 80,
-        docroot_owner       => "vagrant",
-        docroot_group       => "vagrant",
         override            => 'All',
         setenv              => ["TYPO3_CONTEXT Development"],
         custom_fragment     => "ProxyPassMatch ^/(.*\\.php(/.*)?)$ fcgi://127.0.0.1:9000/var/www/cms7.bootstrap.dev/web/$1",
@@ -97,8 +96,6 @@ define bk2k::apache() {
         servername          => "cms8.bootstrap.dev",
         priority            => false,
         port                => 80,
-        docroot_owner       => "vagrant",
-        docroot_group       => "vagrant",
         override            => 'All',
         serveraliases       => [
             'bootstrap.dev'
@@ -135,8 +132,6 @@ define bk2k::apache() {
         servername          => "log.dev",
         priority            => false,
         port                => 80,
-        docroot_owner       => "vagrant",
-        docroot_group       => "vagrant",
         override            => 'All',
         custom_fragment     => "ProxyPassMatch ^/(.*\\.php(/.*)?)$ fcgi://127.0.0.1:9000/var/www/log/data/$1",
     }
@@ -161,8 +156,6 @@ define bk2k::apache() {
         servername          => "phpmyadmin.dev",
         priority            => false,
         port                => 80,
-        docroot_owner       => "vagrant",
-        docroot_group       => "vagrant",
         override            => 'All',
         custom_fragment     => "ProxyPassMatch ^/(.*\\.php(/.*)?)$ fcgi://127.0.0.1:9000/var/www/phpmyadmin/vendor/phpmyadmin/phpmyadmin/$1",
     }
