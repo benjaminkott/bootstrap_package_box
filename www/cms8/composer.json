@@ -19,9 +19,9 @@
         }
     ],
     "require": {
-        "bk2k/bootstrap-package": "dev-master",
-        "dmitryd/typo3-realurl": "^2.1",
-        "typo3/cms": "dev-master as 8.6.1"
+        "bk2k/bootstrap-package": "^8.0",
+        "dmitryd/typo3-realurl": "^2.2",
+        "typo3/cms": "^8.7"
     },
     "config": {
         "sort-packages": true,
