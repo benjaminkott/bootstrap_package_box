@@ -4,7 +4,7 @@ return [
         'debug' => true,
         'explicitADmode' => 'explicitAllow',
         'installToolPassword' => '$P$C14EmEK8S5obieZGRPJFMdHqfgzr1O1',
-        'loginSecurityLevel' => 'normal',
+        'loginSecurityLevel' => 'rsa',
     ],
     'DB' => [
         'database' => 'cms7_bootstrap',
@@ -30,6 +30,7 @@ return [
             'linkvalidator' => 'a:0:{}',
             'lowlevel' => 'a:0:{}',
             'opendocs' => 'a:0:{}',
+            'realurl' => 'a:6:{s:10:"configFile";s:26:"typo3conf/realurl_conf.php";s:14:"enableAutoConf";s:1:"1";s:14:"autoConfFormat";s:1:"0";s:17:"segTitleFieldList";s:0:"";s:12:"enableDevLog";s:1:"0";s:10:"moduleIcon";s:1:"0";}',
             'recycler' => 'a:0:{}',
             'reports' => 'a:0:{}',
             'rsaauth' => 'a:1:{s:18:"temporaryDirectory";s:0:"";}',

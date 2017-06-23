@@ -3,8 +3,7 @@
 /assets/_processed_
 /assets/user_upload
 
-puppet/modules/*
-!puppet/modules/bk2k
+/puppet/modules/*
 
 /www/cms7/vendor
 /www/cms7/web/fileadmin
@@ -27,6 +26,17 @@ puppet/modules/*
 /www/cms8/web/typo3conf/l10n
 /www/cms8/web/typo3temp
 /www/cms8/web/uploads
+
+/www/cms9/vendor
+/www/cms9/web/fileadmin
+/www/cms9/web/index.php
+/www/cms9/web/typo3
+/www/cms9/web/typo3conf/ENABLE_INSTALL_TOOL
+/www/cms9/web/typo3conf/deprecation_*
+/www/cms9/web/typo3conf/ext
+/www/cms9/web/typo3conf/l10n
+/www/cms9/web/typo3temp
+/www/cms9/web/uploads
 
 .idea
 composer.lock

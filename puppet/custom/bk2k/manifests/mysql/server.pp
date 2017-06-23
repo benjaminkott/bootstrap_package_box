@@ -29,6 +29,16 @@ define bk2k::mysql::server() {
         sql => '/vagrant/data/cms8_bootstrap.sql',
         enforce_sql => true,
         import_timeout => 900
+    }->
+    mysql::db { "database for cms9.bootstrap.dev":
+        ensure => "present",
+        user => "bootstrap",
+        password => "bootstrap",
+        dbname => "cms9_bootstrap",
+        host => '%',
+        sql => '/vagrant/data/cms9_bootstrap.sql',
+        enforce_sql => true,
+        import_timeout => 900
     }
 
 }

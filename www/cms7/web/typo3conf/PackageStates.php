@@ -290,6 +290,12 @@ return [
             'suggestions' => [],
             'composerName' => 'bk2k/bootstrap-package',
         ],
+        'realurl' => [
+            'composerName' => 'dmitryd/typo3-realurl',
+            'state' => 'active',
+            'packagePath' => 'typo3conf/ext/realurl/',
+            'suggestions' => [],
+        ],
         'adodb' => [
             'composerName' => 'typo3/cms-adodb',
             'state' => 'inactive',

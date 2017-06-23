@@ -1,79 +1,114 @@
-# -*- mode: ruby -*-
-# vi: set ft=ruby :
+###########################
+### Plugin checks begin ###
+###########################
+$updated = 0
 
-# Install Hostupdater Plugin
+if Vagrant::Util::Platform.windows? then
+    unless Vagrant.has_plugin?("vagrant-winnfsd")
+        system "vagrant plugin install vagrant-winnfsd"
+        $updated = 1
+    end
+end
+
+unless Vagrant.has_plugin?("vagrant-bindfs")
+    system "vagrant plugin install vagrant-bindfs"
+    $updated = 1
+end
+
 unless Vagrant.has_plugin?("vagrant-hostsupdater")
   system "vagrant plugin install vagrant-hostsupdater"
-  print "Installed vagrant-hostsupdater, please rerun the command you executed"
-  exit
+  $updated = 1
 end
 
-# Install Windows NFS Plugin
-unless ((/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) == nil)
-  unless Vagrant.has_plugin?("vagrant-winnfsd")
-    system "vagrant plugin install vagrant-winnfsd"
-    print "Installed vagrant-winnfsd, please rerun the command you executed"
+unless Vagrant.has_plugin?("vagrant-vbguest")
+  system "vagrant plugin install vagrant-vbguest"
+  $updated = 1
+end
+
+if $updated > 0
+    print "Your Vagrant-env installed some plugins."
+    print "Please rerun the command you executed."
     exit
-  end
 end
 
-# Install Triggers Plugin
-unless Vagrant.has_plugin?("vagrant-triggers")
-  system "vagrant plugin install vagrant-triggers"
-  print "Installed vagrant-triggers, please rerun the command you executed"
-  exit
-end
 
-# Vagrant Configuration
-Vagrant.configure("2") do |config|
+##########
+### VM ###
+##########
+Vagrant.configure(2) do |config|
+    config.vm.box = "bento/ubuntu-16.04"
+    config.vm.define "app" do |app|
 
-  # Use ubuntu as development environment
-  config.vm.box = "bento/ubuntu-16.04"
+        # Set hostname
+        app.vm.host_name = "bootstrap.dev"
 
-  # Configure VM
-  config.vm.define "app" do |app|
+        # Create a private network
+        app.vm.network "private_network", ip: "192.168.50.11"
 
-    # Set hostname
-    app.vm.host_name = "bootstrap.dev"
+        # Configure VirtualBox
+        app.vm.provider "virtualbox" do |v|
+            v.memory = 1024
+            v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/vagrant", "1"]
+        end
 
-    # Create a private network
-    app.vm.network "private_network", ip: "192.168.50.11"
+        # Add aliases
+        app.hostsupdater.aliases = [
+            "cms7.bootstrap.dev",
+            "cms8.bootstrap.dev",
+            "cms9.bootstrap.dev",
+            "log.dev",
+            "phpmyadmin.dev"
+        ]
 
-    # Add aliases
-    app.hostsupdater.aliases = [
-      "cms7.bootstrap.dev",
-      "cms8.bootstrap.dev",
-      "bootstrap.dev",
-      "log.dev",
-      "phpmyadmin.dev"
-    ]
+        # Avoid warnings of missing tty (see http://foo-o-rama.com/vagrant--stdin-is-not-a-tty--fix.html)
+        app.vm.provision "fix-no-tty", type: "shell" do |s|
+            s.privileged = false
+            s.inline = "sudo sed -i '/tty/!s/mesg n/tty -s \\&\\& mesg n/' /root/.profile"
+        end
 
-    # Set Synced Folders
-    app.vm.synced_folder ".", "/vagrant", type: "nfs"
+        # Set Synced Folders
+        if Vagrant::Util::Platform.windows? then
+            app.vm.synced_folder './', '/vagrant', disabled: true
+            app.vm.synced_folder ".", "/vagrant", id: "vagrant-root", type: "nfs"
+            app.winnfsd.uid = 1000
+            app.winnfsd.gid = 1000
+            app.bindfs.default_options = {
+                force_user:   'www-data',
+                force_group:  'www-data',
+                perms:        'u=rwX:g=rwX:o=rD'
+            }
+        else
+            app.vm.synced_folder './', '/vagrant', disabled: true
+            app.vm.synced_folder ".", "/var/nfs", type: "nfs"
+            app.nfs.map_uid = Process.uid
+            app.nfs.map_gid = Process.gid
+            app.bindfs.bind_folder '/var/nfs', '/vagrant'
+            app.bindfs.default_options = {
+                force_user:   'www-data',
+                force_group:  'www-data',
+                perms:        'u=rwX:g=rwX:o=rD'
+            }
+        end
 
-    # Configure VirtualBox
-    app.vm.provider "virtualbox" do |vb|
-      vb.memory = 1024
-      vb.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/vagrant", "1"]
-      vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+        # Install Puppet
+        app.vm.provision "shell", inline: "
+            apt-get update;
+            apt-get install -y puppet;
+            rm -rf /etc/puppet/modules;
+            mkdir -p /etc/puppet/modules;
+            cp -R /vagrant/puppet/custom/bk2k /etc/puppet/modules/bk2k
+            puppet module install puppet-php;
+            puppet module install puppetlabs-apt;
+            puppet module install puppetlabs-apache;
+            puppet module install puppetlabs-mysql;
+            puppet module install saz-locales;
+        "
+
+        # Puppet provisioning
+        app.vm.provision "puppet" do |puppet|
+            puppet.manifests_path = "puppet/manifests"
+            puppet.manifest_file = "web.pp"
+        end
+
     end
-
-    # Install Puppet
-    app.vm.provision "shell", inline: "apt-get install -y puppet;
-      mkdir -p /etc/puppet/modules;
-      puppet module install puppetlabs-apt --modulepath '/vagrant/puppet/modules';
-      puppet module install puppetlabs-concat --modulepath '/vagrant/puppet/modules';
-      puppet module install puppetlabs-mysql --modulepath '/vagrant/puppet/modules';
-      puppet module install puppetlabs-apache --modulepath '/vagrant/puppet/modules';
-      puppet module install mayflower-php --version 4.0.0-beta1 --modulepath '/vagrant/puppet/modules'"
-
-    # Puppet provisioning
-    app.vm.provision "puppet" do |puppet|
-      puppet.manifests_path = "puppet/manifests"
-      puppet.manifest_file = "web.pp"
-      puppet.module_path = "puppet/modules"
-    end
-
-  end
-
 end

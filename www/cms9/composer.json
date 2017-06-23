@@ -19,12 +19,10 @@
         }
     ],
     "require": {
-        "bk2k/bootstrap-package": "^7.1",
-        "dmitryd/typo3-realurl": "^2.2",
-        "typo3/cms": "^7.6"
+        "bk2k/bootstrap-package": "dev-master",
+        "typo3/cms": "dev-master"
     },
     "config": {
-        "secure-http": false,
         "sort-packages": true,
         "process-timeout": 2000,
         "preferred-install": {
